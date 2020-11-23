@@ -14,8 +14,8 @@ for name in f:
         oldestCompanyFile = files[-1]
 
 columns = []
-i=0
-for i in range(0,len(files)):
+i = 0
+for i in range(0, len(files)):
     columns = files[i].get(["Date", "Open", "Close"])
     oldestDates = oldestCompanyFile.get(["Date"])
     differenceInLength = len(oldestDates) - len(
@@ -25,12 +25,13 @@ for i in range(0,len(files)):
     newerCompanyColumnClose = ([0] * differenceInLength) + list(
         columns.get("Close"))
 
-    print(differenceInLength,len(oldestCompanyFile.get("Date")),len(newerCompanyColumnOpen),len(newerCompanyColumnClose),files[i])
-    dict = {'Date': oldestCompanyFile.get("Date"),"Open": newerCompanyColumnOpen,"Close": newerCompanyColumnClose}
+    print(differenceInLength, len(oldestCompanyFile.get("Date")), len(newerCompanyColumnOpen),
+          len(newerCompanyColumnClose), files[i])
+    dict = {'Date': oldestCompanyFile.get("Date"), "Open": newerCompanyColumnOpen, "Close": newerCompanyColumnClose}
     df = pd.DataFrame(dict)
 
     fileName = f[i]
-    df.to_csv(path_or_buf="DataSets/INDIAFinal/"+fileName)
+    df.to_csv(path_or_buf="DataSets/INDIAFinal/" + fileName)
     i += 1
 
 oldestDates = oldestCompanyFile.get(["Date"])
