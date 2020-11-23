@@ -1,0 +1,2 @@
+1. Removed High, Low, Volume, Dividends etc and only using Date, Open and close.
+2. Picked the oldest stock in the bunch and added dummy values in Open and Close for all the other stocks to make them have the same date ranges.

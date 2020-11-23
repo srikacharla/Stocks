@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+from os import walk
+
 
 columnOptions = ["Open", "High", "Low", "Close", "Adj", "Close", "Volume"]
 fileNames = []
