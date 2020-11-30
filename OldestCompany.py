@@ -2,12 +2,12 @@ from os import walk
 import pandas as pd
 
 f = []
-for (dirpath, dirnames, filenames) in walk(f"DataSets/INDIA"):
+for (dirpath, dirnames, filenames) in walk(f"DataSets/US"):
     f.extend(filenames)
     break
 files = []
 for name in f:
-    files.append(pd.read_csv(f"DataSets/INDIA/{name}"))
+    files.append(pd.read_csv(f"DataSets/US/{name}"))
 date = "2021-09-09"
 finalName = ""
 i = 0
@@ -20,5 +20,6 @@ for singleFile in files:
         date = column.get("Date")[0]
         finalName = singleFile
         finali = i
+print(f[finali])
 
 
